@@ -2,7 +2,7 @@
 
 Unsupervised machine learning (sparse K-means clustering) applied to wearable actigraphy data from the Multi-Ethnic Study of Atherosclerosis (MESA) to identify sleep phenotypes and model their association with all-cause mortality.
 
-**[View the Interactive Code Review & Portfolio Page](https://joonchungpersonal-dev.github.io/sleep-clusters-mesa/)**
+**[View the Interactive Code Review & Portfolio Page](https://chung-lab-miami.github.io/sleep-clusters-mesa/)**
 
 ## Key Findings
 
