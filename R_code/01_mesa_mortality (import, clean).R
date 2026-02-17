@@ -2,8 +2,8 @@
 
 ## Joon Chung
 ## Brigham and Women's Hospital, Harvard Medical School
-## jchung26@bwh.harvard.edu
-## jchung@g.harvard.edu
+## Contact: see README
+## See README for author information
 
 ## Title:
 # Racial/ethnic Differences in Actigraphy, Questionnaire, 
@@ -14,15 +14,15 @@
 
 ##################################################################################
 ##################################################################################
-setwd("C:/Users/joonc/Desktop/Dropbox/MESA - racial-ethnic disparities/datasets") # home pc
- setwd("C:/Users/Ae and Jong/Dropbox (Partners HealthCare)/MESA/MESA") # Work PC
+setwd("<MESA_DATA_DIR>") # home pc
+ setwd("<MESA_DATA_DIR>") # Work PC
 
- setwd("C:/Users/jj261/Dropbox (Partners HealthCare)/Dropbox/MESA - racial-ethnic disparities/datasets") # home pc
+ setwd("<MESA_DATA_DIR>") # home pc
  
  
  
  library(haven)
- MESAe5_SleepActigRhy_20170905 <- read_dta("~/Dropbox (Partners HealthCare)/MESA/MESA/MESAe5_SleepActigRhy_20170905.dta")
+ MESAe5_SleepActigRhy_20170905 <- read_dta("<MESA_DATA_DIR>/MESAe5_SleepActigRhy_20170905.dta")
  View(MESAe5_SleepActigRhy_20170905)
 
 library(foreign)
@@ -145,7 +145,7 @@ qplot(mesa_df$income_tertile)
 ## Depressive symptoms minus the sleep component
 #  cesd5c - (badslp5)
 library(foreign)
-setwd("~/Dropbox (Partners HealthCare)/MESA/MESA/MESAe5_IndividualDomains_20190823/MESAe5_IndividualDomains_20190823/MESA_Exam5_HealthLife")
+setwd("<MESA_DATA_DIR>/MESAe5_IndividualDomains")
 mesa_healthlife_df <- read.dta("MESAe5_HealthLife_20120701.dta")
 mesa_healthlife_df <- mesa_healthlife_df %>% dplyr::mutate(cesd_sleep_item = as.numeric(badslp5) - 1) %>%
   dplyr::select(cesd_sleep_item, badslp5, cesd5c, idno) 
@@ -156,7 +156,7 @@ mesa_df <-  merge(mesa_df, mesa_healthlife_df, by = "idno")
 
 mesa_df$cesd_nosleep <- mesa_df$cesd5c - mesa_df$cesd_sleep_item
 
-# setwd("C:/Users/joonc/Desktop/Dropbox/MESA - racial-ethnic disparities")
+# setwd("<MESA_DATA_DIR>")
 
 ## Medications (sleep): benzos and ssris
 # mesa_df$benzo <- mesa_df$benzod5c
@@ -198,7 +198,7 @@ mesa_df$alcohol <- mesa_df$curalc5
 mesa_df$smoke <- mesa_df$smkstat5
 
 ## Back to cluster dropbox
-setwd("/Users/jj261/Dropbox (Partners HealthCare)/2022_sleep_clusters_mesa")
+setwd("<PROJECT_DIR>")
 
 # End script
 

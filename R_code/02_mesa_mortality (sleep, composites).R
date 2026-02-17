@@ -443,7 +443,7 @@ table(mesa_df$cluster_f)
 ## Events code
 
 ## Joon Chung
-## jchung26@bwh.harvard.edu
+## Contact: see README
 
 # From Tianyi:
 # slpexam5=stdyady5c; /*days of actigraphy relative to exam 5*/
@@ -452,7 +452,7 @@ table(mesa_df$cluster_f)
 #       
 
 library(haven)
-mesa_events <- read_dta("C:/Users/jj261/Dropbox (Partners HealthCare)/MESAEvThru2018_20210518/MESAEvThru2018_20210518.dta")
+mesa_events <- read_dta("<MESA_DATA_DIR>/MESAEvThru2018.dta")
 
 mesa_df$slpexam5 <- mesa_df$stdyady5c
 which(is.na(mesa_df$slpexam5))
@@ -464,7 +464,7 @@ mesa_df$slpexam1 <- mesa_df$slpexam5 + mesa_df$e15dyc # Days of sleep study rela
 # mortality_df <- merge(mesa_df, mesa_events, by = "idno")
 
 ## Non cvd events (cancer, copd)
-MESANonCVDEvThru2018_20210517 <- read_dta("C:/Users/jj261/Dropbox (Partners HealthCare)/MESANonCVDEvThru2018_20210517/MESANonCVDEvThru2018_20210517.dta")
+MESANonCVDEvThru2018_20210517 <- read_dta("<MESA_DATA_DIR>/MESANonCVDEvThru2018.dta")
 mesa_noncvd_df <- MESANonCVDEvThru2018_20210517
 
 mesa_cvd_events <- mesa_events %>% dplyr::select(cvda, cvdatt, idno, dth, dthtt)
@@ -472,5 +472,5 @@ mesa_noncvd_events <- mesa_noncvd_df %>% dplyr::select(cancer, cancertt, copd, c
 mesa_all_events <- merge(mesa_cvd_events, mesa_noncvd_events, by = "idno")
 
 ## Back to cluster dropbox
-setwd("C:/Users/jj261/Dropbox (Partners HealthCare)/2023 sleep_clusters_MESA")
+setwd("<PROJECT_DIR>")
 ## End script

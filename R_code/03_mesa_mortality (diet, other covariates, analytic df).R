@@ -1,5 +1,5 @@
 ## Joon Chung
-## jchung26@bwh.harvard.edu
+## Contact: see README
 ## 01/17/2022
 
 ## Add diet code + prevalent outcomes
@@ -23,12 +23,12 @@ library(haven)
 library(tidyverse)
 library(ggplot2)
 
-setwd("/Users/jj261/Dropbox (Partners HealthCare)/MESA/MESA/MESAe5_IndividualDomains_20190823")
+setwd("<MESA_DATA_DIR>/MESAe5_IndividualDomains")
 ## Folders within:
 ## MESA_Exam5_Diet_FFQ/MESAe5_FFQ_20150928.dta
 ## MESA_Exam5_Diet_Nutrients/MESAe5_Nutrient_20150331.dta
 
-# read_dta("C:/Users/jj261/Dropbox (Partners HealthCare)/MESA/MESAe5_IndividualDomains_20190823/MESAe5_IndividualDomains_20190823/MESA_Exam5_Diet_FFQ/MESAe5_FFQ_20150928.dta")
+# read_dta("<MESA_DATA_DIR>/MESAe5_IndividualDomains/MESA_Exam5_Diet_FFQ/MESAe5_FFQ_20150928.dta")
 
 mesa_ffq5 <- read_dta("MESAe5_IndividualDomains_20190823/MESA_Exam5_Diet_FFQ/MESAe5_FFQ_20150928.dta")
 mesa_nutrients5 <- read_dta("MESAe5_IndividualDomains_20190823/MESA_Exam5_Diet_Nutrients/MESAe5_Nutrient_20150331.dta")
@@ -174,7 +174,7 @@ aehi_df <- mesa_diet %>% dplyr::select(aehi_10, idno,
 ##                3) mesa_all_events (mortality, cvd, copd, cancer)
 
 ## Back to cluster dropbox
-setwd("/Users/jj261/Dropbox (Partners HealthCare)/2023_sleep_clusters_mesa")
+setwd("<PROJECT_DIR>")
 
 ## End script
 

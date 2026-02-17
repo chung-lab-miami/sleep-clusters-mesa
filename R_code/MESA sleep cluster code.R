@@ -1,5 +1,5 @@
 ## Joon Chung
-## jchung26@bwh.harvard.edu
+## Contact: see README
 ## 01/19/2022
 
 # Regularity and duration clusters

@@ -1,5 +1,5 @@
 ## Joon Chung
-## jchung26@bwh.harvard.edu
+## Contact: see README
 ## 01/17/2022
 
 ## 3 data-frames: 1) mesa_df (socio, lifestyle, sleep)
@@ -126,7 +126,7 @@ summary(shs_df$death_tt_years)
 ## 171 deaths of 1726 observations
 
 ## Back to cluster dropbox
-setwd("/Users/jj261/Dropbox (Partners HealthCare)/2022_sleep_clusters_mesa")
+setwd("<PROJECT_DIR>")
 
 ## End script
 
