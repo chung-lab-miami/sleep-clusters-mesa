@@ -173,7 +173,7 @@ aehi_df <- mesa_diet %>% dplyr::select(aehi_10, idno,
 ##                2) aehi_df (diet)
 ##                3) mesa_all_events (mortality, cvd, copd, cancer)
 
-## Back to cluster dropbox
+## Back to project directory
 setwd("<PROJECT_DIR>")
 
 ## End script

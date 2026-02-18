@@ -125,7 +125,7 @@ summary(shs_df$death_tt_years)
 
 ## 171 deaths of 1726 observations
 
-## Back to cluster dropbox
+## Back to project directory
 setwd("<PROJECT_DIR>")
 
 ## End script

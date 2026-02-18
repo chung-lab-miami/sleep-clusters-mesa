@@ -1,7 +1,7 @@
 ## Joon Chung
 
 ## Joon Chung
-## Brigham and Women's Hospital, Harvard Medical School
+## University of Miami, Miller School of Medicine
 ## Contact: see README
 ## See README for author information
 
@@ -23,7 +23,7 @@ setwd("<MESA_DATA_DIR>") # home pc
  
  library(haven)
  MESAe5_SleepActigRhy_20170905 <- read_dta("<MESA_DATA_DIR>/MESAe5_SleepActigRhy_20170905.dta")
- View(MESAe5_SleepActigRhy_20170905)
+# Data imported successfully
 
 library(foreign)
 library(dplyr)
@@ -197,7 +197,7 @@ mesa_df$alcohol <- mesa_df$curalc5
 # smoke status
 mesa_df$smoke <- mesa_df$smkstat5
 
-## Back to cluster dropbox
+## Back to project directory
 setwd("<PROJECT_DIR>")
 
 # End script

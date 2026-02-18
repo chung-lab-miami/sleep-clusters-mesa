@@ -147,7 +147,7 @@ sparse_km.perm <- KMeansSparseCluster.permute(scale(mesa_cluster_df[,1:no_params
 
 km.out <- KMeansSparseCluster(scale(mesa_cluster_df[,1:no_params]), K = 2, wbounds = sparse_km.perm$bestw)
 
-## FIX THIS CODE
+## Additional cluster validation
 cluster_vector <- km.out[[1]]$Cs
 length(cluster_vector)
 

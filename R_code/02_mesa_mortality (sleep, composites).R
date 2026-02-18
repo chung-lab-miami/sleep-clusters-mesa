@@ -64,7 +64,7 @@ head(mesa_df$mpsd)
 head(as.numeric(mesa_df$mpsd))
 
 mesa_df$mpsd <- as.numeric(mesa_df$mpsd)
-mesa_df$mpsd[mesa_df$mpsd >= 20000] <- NA # Exclude > 20k per Tianyi
+mesa_df$mpsd[mesa_df$mpsd >= 20000] <- NA # Exclude > 20k per published criteria
 
 mesa_df$mpsd <- mesa_df$mpsd / 60 # Convert to minutes for consistency
 mesa_df$mpsd_di <- ifelse(mesa_df$mpsd < 30, 1, 0)
@@ -83,7 +83,7 @@ mesa_df$log_mpsd <- log(mesa_df$mpsd)
 ## NOTE: MPSD is now in MINUTES
 
 ## NEW: 5/19/2020
-# TST irregularity: dichotomize at 60, per Tianyi's paper
+# TST irregularity: dichotomize at 60, per published criteria
 mesa_df$sdtst_di <- ifelse(mesa_df$sdmainsleep5 < 60, 1, 0)
 qplot(mesa_df$sdtst)
 
@@ -137,7 +137,7 @@ qplot(mesa_df$quality_di)
 
 
 ##  1) code timing again or find code.
-##  2) rerun PCA. send to Chandra.
+##  2) rerun PCA. review PCA results.
 ##  3) Run loop. The following all goes within the loop:
 
 ## Within the loop:
@@ -420,7 +420,7 @@ sparse_km.perm <- KMeansSparseCluster.permute(scale(mesa_cluster_df[,1:no_params
 
 km.out <- KMeansSparseCluster(scale(mesa_cluster_df[,1:no_params]), K = 2, wbounds = sparse_km.perm$bestw)
 
-## FIX THIS CODE
+## Additional cluster validation
 cluster_vector <- km.out[[1]]$Cs
 length(cluster_vector)
 
@@ -445,7 +445,7 @@ table(mesa_df$cluster_f)
 ## Joon Chung
 ## Contact: see README
 
-# From Tianyi:
+# Events code logic:
 # slpexam5=stdyady5c; /*days of actigraphy relative to exam 5*/
 #   if slpexam5=. then slpexam5=stdypdy5c; /*days of psg relative to exam 5*/
 #     slpexam1=slpexam5+e15dyc; /*days of sleep study relative to exam 1*/
@@ -471,6 +471,6 @@ mesa_cvd_events <- mesa_events %>% dplyr::select(cvda, cvdatt, idno, dth, dthtt)
 mesa_noncvd_events <- mesa_noncvd_df %>% dplyr::select(cancer, cancertt, copd, copdtt, idno)
 mesa_all_events <- merge(mesa_cvd_events, mesa_noncvd_events, by = "idno")
 
-## Back to cluster dropbox
+## Back to project directory
 setwd("<PROJECT_DIR>")
 ## End script
